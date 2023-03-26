@@ -9,6 +9,8 @@ connect {
   enabled = true
 }
 
+datacenter = "local"
+retry_join = ["10.0.0.2","10.0.0.3","10.0.0.4"]
 # Addresses and ports
 addresses {
   grpc = "$2"
@@ -30,7 +32,7 @@ enable_script_checks = false
 # Enable local script checks
 enable_local_script_checks = true
 
-bootstrap_expect = $3
+# bootstrap_expect = $3
 EOF
 
 rm -f /vagrant/tls/consul/local-server-consul-0.pem /vagrant/tls/consul/local-server-consul-0-key.pem
@@ -50,3 +52,4 @@ mv /etc/consul.d/consul.service /etc/systemd/system/consul.service
 sudo systemctl daemon-reload
 sudo systemctl enable consul
 sudo systemctl start consul
+
