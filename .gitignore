@@ -1,0 +1,4 @@
+.vagrant/
+tls/
+.DS_Store
+packer/box/
