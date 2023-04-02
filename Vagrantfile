@@ -6,7 +6,7 @@ CONSUL_CLIENT_NUMER = 2
 Vagrant.configure(2) do |config|
   # Increase memory for Virtualbox
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "4096"
+    vb.memory = "1024"
   end
   (0..CONSUL_SERVER_NUMER-1).each do |i|
     config.vm.define "consul_server-#{i}" do |consul|
